@@ -1,0 +1,13 @@
+<div class="row" *ngFor="let group of testGroups">
+  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6" *ngFor="let testcase of group.testcases">
+    <ngx-passrate [groupName]="group.groupName"
+                  [tcName]="testcase.testName"
+                  [passCount]="testcase.passCount"
+                  [failCount]="testcase.failCount"
+                  [passGate]="testcase.passGate"
+                  [avgRate]="testcase.avgRate"
+                  [testDate]="testcase.testDate"
+                  [testTime]="testcase.testTime">
+    </ngx-passrate>
+  </div>
+</div>

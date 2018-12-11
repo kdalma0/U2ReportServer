@@ -1,0 +1,15 @@
+<nb-card size="xsmall" class="solar-card" (click)="moveHistory()">
+  <nb-card-header>{{ groupName }} / {{ tcName }}</nb-card-header>
+  <nb-card-body>
+    <div echarts [options]="option" class="echart">
+    </div>
+    <div class="info">
+      <div class="value">Pass : {{ pass }} / {{ pass+fail }}</div>
+      <div class="details">{{ testDate }} {{ testTime }}</div>
+      <div class="details"><span>Pass Gate : </span> {{ passGate }}%</div>
+      <div class="details"><span>Total Count : </span> {{ pass+fail }}</div>
+      <div class="details"><span>Pass Count : </span> {{ pass }}</div>
+      <div class="details"><span>Matching Rate : </span> {{ avgRate }}%</div>
+    </div>
+  </nb-card-body>
+</nb-card>

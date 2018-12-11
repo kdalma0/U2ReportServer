@@ -1,0 +1,118 @@
+<nb-card>
+  <div class="consumption-table">
+    <div class="table-header">
+      <div class="subtitle">{{ groupName }}</div>
+      <div>{{ testName }}</div>
+    </div>
+
+    <nb-tabset fullWidth>
+      <nb-tab tabTitle="Pass/Fail" active="false">
+        <div class="stats-month" *ngFor="let data of listdata | reverse" (click)="moveGallery(data.id)">
+          <div>
+            <span class="testdate">{{ data.testDate }}<br />{{ data.testTime }}</span>
+          </div>
+          <div class="results">
+            <b>{{ data.passCount }}</b> / <b>{{ data.failCount }}</b>
+          </div>
+        </div>
+      </nb-tab>
+      <nb-tab tabTitle="Pass/Total" active="true">
+        <div class="stats-month" *ngFor="let data of listdata" (click)="moveGallery(data.id)">
+          <div>
+            <span class="testdate">{{ data.testDate }}<br />{{ data.testTime }}</span>
+          </div>
+          <div class="results">
+            <b>{{ data.passRate }}</b>% , <b>{{ data.passCount }}</b> / <b>{{ data.passCount+data.failCount }}</b>
+          </div>
+        </div>
+      </nb-tab>
+      <nb-tab tabTitle="Rate" active="false">
+        <div class="stats-month" *ngFor="let data of listdata" (click)="moveGallery(data.id)">
+          <div>
+            <span class="testdate">{{ data.testDate }}<br />{{ data.testTime }}</span>
+          </div>
+          <div class="results">
+            <b>{{ data.passRate }}</b>% , <b>{{ data.avgRate }}</b>%
+          </div>
+        </div>
+      </nb-tab>
+    </nb-tabset>
+  </div>
+
+  <div class="chart-container">
+    <div class="chart-header">
+      <div class="header-stats">
+        <div class="stats-block">
+          <div class="subtitle">Last Tested</div>
+          <div>
+            <span class="value">{{ lastTestTime }}</span>
+            <span class="unit"></span>
+          </div>
+        </div>
+
+        <div class="stats-block currency">
+          <div class="subtitle">Pass Rate</div>
+          <div>
+            <span class="value">{{ lastPassRate }}</span>
+            <span class="unit">%</span>
+          </div>
+        </div>
+
+        <div class="stats-block currency">
+          <div class="subtitle">Pass Count</div>
+          <div>
+            <span class="value">{{ lastPassCount }}</span>
+            <span class="unit"></span>
+          </div>
+        </div>
+
+        <div class="stats-block currency">
+          <div class="subtitle">Fail Count</div>
+          <div>
+            <span class="value">{{ lastFailCount }}</span>
+            <span class="unit"></span>
+          </div>
+        </div>
+
+        <div class="stats-block currency">
+          <div class="subtitle">Total Count</div>
+          <div>
+            <span class="value">{{ lastPassCount+lastFailCount }}</span>
+            <span class="unit"></span>
+          </div>
+        </div>
+
+        <div class="stats-block currency">
+          <div class="subtitle">Matching Rate</div>
+          <div>
+            <span class="value">{{ lastMatchingRate }}</span>
+            <span class="unit">%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown"
+           [ngClass]="{ 'ghost-dropdown': currentTheme === 'corporate' }"
+           ngbDropdown>
+        <button type="button" ngbDropdownToggle class="btn"
+                [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
+          {{ selPassGate }}
+        </button>
+        <ul class="dropdown-menu" ngbDropdownMenu>
+          <li class="dropdown-item" *ngFor="let gate of selPassGates" (click)="chagePassGate(gate)">{{ gate }}</li>
+        </ul>
+      </div>
+    </div>
+    <div echarts
+         [options]="passOption"
+         class="echart1"
+         (chartInit)="onChartInit1($event)">
+    </div>
+
+    <div echarts
+         [options]="compareOption"
+         class="echart2"
+         (chartInit)="onChartInit2($event)">
+    </div>
+  </div>
+</nb-card>

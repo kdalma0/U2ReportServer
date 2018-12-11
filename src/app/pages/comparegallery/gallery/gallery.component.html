@@ -1,0 +1,27 @@
+<div #galleryContainer class="galleryContainer">
+  <div class="innerGalleryContainer">
+    <div *ngFor='let imgrow of gallery; let i = index'
+         class="imagerow"
+         [style.margin-bottom.px]="imageMargin">
+      <div *ngFor='let img of imgrow; let j = index'
+           [style.background]="black"
+           [style.margin-left.px]="imageMargin/2"
+           [style.margin-right.px]="imageMargin/2"
+           (click)="openImageViewer(img)"
+           class="imageContainer">
+        <img #imageElement
+             class="thumbnail"
+             [style.width.px]="img['width']"
+             [style.height.px]="img['height']"
+             [src]="img['srcAfterFocus']" />
+        <div class="rate">
+          <div class="text">{{ img['rate'] }} %</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ngx-viewer baseUrl="{{ baseUrl }}">
+</ngx-viewer>

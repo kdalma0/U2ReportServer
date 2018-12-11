@@ -1,0 +1,9 @@
+<div class="header-container"
+     [class.left]="position === 'normal'"
+     [class.right]="position === 'inverse'">
+  <div class="logo-containter">
+    <a (click)="toggleSidebar()" href="#" class="navigation"><i class="nb-menu"></i></a>
+    <div class="logo" (click)="goToHome()">Report Service<span> of U2Tester for Unity3D</span></div>
+  </div>
+</div>
+
