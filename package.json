@@ -58,7 +58,7 @@
     "npm": "^6.4.1",
     "pace-js": "1.0.2",
     "roboto-fontface": "0.8.0",
-    "rxjs": "^6.1.0",
+    "rxjs": "^6.0.0",
     "rxjs-compat": "^6.0.0-tactical-rc.1",
     "socicon": "3.0.5",
     "tinymce": "4.5.7",
