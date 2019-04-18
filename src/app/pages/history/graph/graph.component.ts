@@ -96,6 +96,13 @@ export class GraphComponent implements OnChanges, OnDestroy {
     this.echartsIntance2 = echarts;
   }
 
+  onClickChart(event) {
+    console.log(event);
+    let index: number = event.dataIndex;
+    console.log('/pages/gallery/' + this.groupName + '/' + this.testName + '/' + this.listdata[index].id);
+    this.router.navigateByUrl('/pages/gallery/' + this.groupName + '/' + this.testName + '/' + this.listdata[index].id);
+  }
+
   resizeChart() {
     if (this.echartsIntance1) {
       this.echartsIntance1.resize();

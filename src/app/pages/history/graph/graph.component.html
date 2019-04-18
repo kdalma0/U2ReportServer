@@ -106,13 +106,15 @@
     <div echarts
          [options]="passOption"
          class="echart1"
-         (chartInit)="onChartInit1($event)">
+         (chartInit)="onChartInit1($event)"
+         (chartClick)="onClickChart($event)">
     </div>
 
     <div echarts
          [options]="compareOption"
          class="echart2"
-         (chartInit)="onChartInit2($event)">
+         (chartInit)="onChartInit2($event)"
+         (chartClick)="onClickChart($event)">
     </div>
   </div>
 </nb-card>
