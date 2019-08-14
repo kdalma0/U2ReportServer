@@ -2946,7 +2946,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
     production: false,
-    apiBase: 'http://35.221.126.118:8080',
+    apiBase: '',
 };
 
 
@@ -2990,7 +2990,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Source_2018\u2reportserver\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Source_2019\u2reportserver\src\main.ts */"./src/main.ts");
 
 
 /***/ })
