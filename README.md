@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+# U2Report service
 
-You can use the [editor on GitHub](https://github.com/kdalma0/U2ReportServer/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+U2Report is reporting service of the U2Tester(Unity3D UI Test Automation Framework)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+Install
+--------
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+1. Install the node.js
+```shell
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    sudo apt-get install nodejs gcc g++ make
+    sudo npm install -g n
+    sudo n stable
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+2. Install the Angular CLI
+```shell
+    sudo npm install -g @angular/cli
+```
 
-### Jekyll Themes
+3. Clone the U2Report Service repository
+```shell
+    sudo apt-get install git
+    git clone https://github.com/kdalma0/U2ReportServer.git
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kdalma0/U2ReportServer/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+4. Build the U2Report Service
+```shell
+    cd U2ReportServer
+    npm install
+    ng build
+```
 
-### Support or Contact
+5. Run the U2Report Service
+```shell
+    node server.js
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+6. Visit the U2Report site
+    http://{host address}:8080
+
+
+More Information
+--------
+
+* [Install demo of youtube](https://www.youtube.com/watch?v=IVrP-VVdlD8)
+* [Asset store of Unity3D](https://assetstore.unity.com/packages/slug/157420)
